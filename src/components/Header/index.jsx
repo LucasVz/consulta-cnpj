@@ -2,18 +2,17 @@ import { HiBuildingOffice } from 'react-icons/hi2';
 import { useState, useEffect } from 'react';
 import ValidateCNPJ from '../../utils/ValidateCNPJ';
 import VanillaMasker from 'vanilla-masker';
-import { Container, Button, Form, Title } from './style';
 import { getCompanies } from '../../services/api';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import useCompanies from '../../hooks/useCompanies';
+import { Container, Button, Form, Title } from './style';
 
 export default function Header() {
   const navigate = useNavigate();
   const [cnpj, setCnpj] = useState('');
-  const [companies, setCompanies] = useState(() => {
-    const saveCompanies = JSON.parse(localStorage.getItem('companies'));
-    return saveCompanies || [];
-  });
+  const { companies, setCompanies } = useCompanies();
+
   async function getCNPJ(event) {
     event.preventDefault();
     if (!ValidateCNPJ(cnpj)) {
@@ -27,6 +26,7 @@ export default function Header() {
     const cnpjNumber = cnpj.replace(/\D/g, '');
     try {
       const result = await getCompanies(cnpjNumber);
+      console.log(result);
       setCompanies([...companies, result.data]);
       setCnpj('');
     } catch (error) {
