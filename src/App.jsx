@@ -1,10 +1,9 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import List from "./pages/List";
-import Map from "./pages/Map";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Index from './pages/Index';
+import List from './pages/List';
+import Map from './pages/Map';
 
 function App() {
-
   return (
     <BrowserRouter>
       <Routes>
@@ -13,7 +12,7 @@ function App() {
         <Route path="/map" element={<Map />} />
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
