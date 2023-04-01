@@ -5,14 +5,15 @@ import VanillaMasker from 'vanilla-masker';
 import { Container, Button, Form, Title } from './style';
 import { getCompanies } from '../../services/api';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
+  const navigate = useNavigate();
   const [cnpj, setCnpj] = useState('');
   const [companies, setCompanies] = useState(() => {
     const saveCompanies = JSON.parse(localStorage.getItem('companies'));
     return saveCompanies || [];
   });
-
   async function getCNPJ(event) {
     event.preventDefault();
     if (!ValidateCNPJ(cnpj)) {
@@ -50,6 +51,9 @@ export default function Header() {
 
   useEffect(() => {
     localStorage.setItem('companies', JSON.stringify(companies));
+    if (companies.length !== 0) {
+      navigate('/list');
+    }
   }, [companies]);
 
   return (
