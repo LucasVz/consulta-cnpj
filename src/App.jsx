@@ -4,6 +4,7 @@ import Index from './pages/Index';
 import List from './pages/List';
 import Map from './pages/Map';
 import CompaniesContext from './context/companiesContext';
+import CompanymapContext from './context/companyMapContext';
 
 function App() {
   const [companies, setCompanies] = useState(() => {
@@ -11,16 +12,20 @@ function App() {
     return saveCompanies || [];
   });
 
+  const [companyMap, setCompanyMap] = useState([]);
+
   return (
-    <CompaniesContext.Provider value={{ companies, setCompanies }}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/list" element={<List />} />
-          <Route path="/map" element={<Map />} />
-        </Routes>
-      </BrowserRouter>
-    </CompaniesContext.Provider>
+    <CompanymapContext.Provider value={{ companyMap, setCompanyMap }}>
+      <CompaniesContext.Provider value={{ companies, setCompanies }}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/list" element={<List />} />
+            <Route path="/map" element={<Map />} />
+          </Routes>
+        </BrowserRouter>
+      </CompaniesContext.Provider>
+    </CompanymapContext.Provider>
   );
 }
 

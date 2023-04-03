@@ -1,11 +1,14 @@
 import { Container } from './style';
 import { useNavigate } from 'react-router-dom';
+import useCompanyMap from '../../hooks/useCompanyMap';
 
 export default function Card({ company }) {
   const navigate = useNavigate();
+  const { setCompanyMap } = useCompanyMap();
 
   function changePAge() {
     navigate('/map');
+    setCompanyMap(company);
   }
   return (
     <Container onClick={changePAge}>
