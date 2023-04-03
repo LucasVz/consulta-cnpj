@@ -26,7 +26,6 @@ export default function Header() {
     const cnpjNumber = cnpj.replace(/\D/g, '');
     try {
       const result = await getCompanies(cnpjNumber);
-      console.log(result);
       setCompanies([...companies, result.data]);
       setCnpj('');
     } catch (error) {
