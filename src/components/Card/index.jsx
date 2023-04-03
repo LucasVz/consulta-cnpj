@@ -6,9 +6,9 @@ export default function Card({ company }) {
   const navigate = useNavigate();
   const { setCompanyMap } = useCompanyMap();
 
-  function changePAge() {
-    navigate('/map');
+  async function changePAge() {
     setCompanyMap(company);
+    navigate('/map');
   }
   return (
     <Container onClick={changePAge}>
