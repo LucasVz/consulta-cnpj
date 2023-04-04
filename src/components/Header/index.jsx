@@ -29,17 +29,12 @@ export default function Header() {
       setCompanies([...companies, result.data]);
       setCnpj('');
     } catch (error) {
-      console.log(error);
-      if (error.message === 'Network Error') {
-        Swal.fire({
-          icon: 'error',
-          title: 'Erro de rede',
-          text: 'Houve um erro de rede. Verifique se o CNPJ realmente existe ou tente novamente daqui a 1 minuto',
-        });
-      } else {
-        console.log(error);
-      }
       setCnpj('');
+      Swal.fire({
+        icon: 'error',
+        title: 'CNPJ não existe',
+        text: 'o CNPJ ainda não foi cadastrado',
+      });
     }
   }
 
