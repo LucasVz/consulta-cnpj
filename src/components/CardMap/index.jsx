@@ -1,17 +1,18 @@
 import { Container } from './style';
 import { useNavigate } from 'react-router-dom';
-import useCompanyMap from '../../hooks/useCompanyMap';
+import { FiArrowLeftCircle } from 'react-icons/fi';
 
-export default function Card({ company }) {
+export default function CardMap({ company }) {
   const navigate = useNavigate();
-  const { setCompanyMap } = useCompanyMap();
 
   async function changePage() {
-    setCompanyMap(company);
-    navigate('/map');
+    navigate('/list');
   }
   return (
-    <Container onClick={changePage}>
+    <Container>
+      <FiArrowLeftCircle className="arrow" color="#3b817e" onClick={changePage}>
+        voltar
+      </FiArrowLeftCircle>
       <h4>{company.nome}</h4>
       <p>Razão social</p>
       <h4>{company.cnpj}</h4>

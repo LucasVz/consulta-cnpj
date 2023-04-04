@@ -4,12 +4,11 @@ import useCompanyMap from '../../hooks/useCompanyMap';
 import Card from '../../components/Card';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import CardMap from '../../components/CardMap';
 
 export default function Map() {
   const navigate = useNavigate();
   const { companyMap } = useCompanyMap();
-  console.log(companyMap);
-
   const address =
     companyMap.logradouro +
     ', ' +
@@ -57,6 +56,7 @@ export default function Map() {
 
   return (
     <Container>
+      <CardMap company={companyMap} />
       <MapContainer id="map" />
     </Container>
   );
