@@ -10,7 +10,7 @@ const Container = styled.div`
   position: fixed;
   width: 100%;
 
-  padding-top: 2rem;
+  padding-top: 2.7rem;
   padding-bottom: 1.9rem;
 `;
 

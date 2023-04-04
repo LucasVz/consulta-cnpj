@@ -28,13 +28,6 @@ export default function Header() {
       const result = await getCompanies(cnpjNumber);
       setCompanies([...companies, result.data]);
       setCnpj('');
-      if (result.status === 429) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Muitas requisições',
-          text: 'Espere um minuto para poder fazer uma nova requisição',
-        });
-      }
     } catch (error) {
       console.log(error);
       if (error.message === 'Network Error') {
