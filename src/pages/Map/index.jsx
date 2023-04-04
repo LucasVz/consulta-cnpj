@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Container, MapContainer } from './style';
 import useCompanyMap from '../../hooks/useCompanyMap';
-import Card from '../../components/Card';
 import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
 import CardMap from '../../components/CardMap';
 
 export default function Map() {
@@ -45,10 +43,6 @@ export default function Map() {
           map: map,
         });
       } else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Endereço não encontrado',
-        });
         console.log(status);
       }
     });

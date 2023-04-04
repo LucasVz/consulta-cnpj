@@ -28,13 +28,25 @@ export default function Header() {
       const result = await getCompanies(cnpjNumber);
       setCompanies([...companies, result.data]);
       setCnpj('');
+      if (result.status === 429) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Muitas requisições',
+          text: 'Espere um minuto para poder fazer uma nova requisição',
+        });
+      }
     } catch (error) {
+      console.log(error);
+      if (error.message === 'Network Error') {
+        Swal.fire({
+          icon: 'error',
+          title: 'Erro de rede',
+          text: 'Houve um erro de rede. Verifique se o CNPJ realmente existe ou tente novamente daqui a 1 minuto',
+        });
+      } else {
+        console.log(error);
+      }
       setCnpj('');
-      Swal.fire({
-        icon: 'error',
-        title: 'CNPJ não existe',
-        text: 'o CNPJ ainda não foi cadastrado',
-      });
     }
   }
 
