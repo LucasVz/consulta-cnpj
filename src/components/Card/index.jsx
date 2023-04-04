@@ -17,7 +17,8 @@ export default function Card({ company }) {
       <h4>{company.cnpj}</h4>
       <p>CNPJ</p>
       <h4>
-        {company.logradouro}, {company.numero}, {company.bairro}
+        {company.logradouro}, {company.numero} - {company.bairro},{' '}
+        {company.municipio} - {company.uf}
       </h4>
       <p>Endereço</p>
     </Container>

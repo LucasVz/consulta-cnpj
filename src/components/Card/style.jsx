@@ -12,8 +12,8 @@ const Container = styled.div`
 
   border-radius: 1rem;
 
-  width: 19.5rem;
-  height: 19.5rem;
+  width: 19.8rem;
+  height: 21rem;
 
   h4 {
     font-weight: bold;
@@ -22,7 +22,7 @@ const Container = styled.div`
 
     margin-bottom: 0.2rem;
 
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 
   p {
