@@ -10,9 +10,12 @@ export default function CardMap({ company }) {
   }
   return (
     <Container>
-      <FiArrowLeftCircle className="arrow" color="#3b817e" onClick={changePage}>
-        voltar
-      </FiArrowLeftCircle>
+      <FiArrowLeftCircle
+        data-testid="arrow"
+        className="arrow"
+        color="#3b817e"
+        onClick={changePage}
+      />
       <h4>{company.nome}</h4>
       <p>Razão social</p>
       <h4>{company.cnpj}</h4>

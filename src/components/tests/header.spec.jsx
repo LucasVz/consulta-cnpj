@@ -1,10 +1,10 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Header from '../Header';
-import '@testing-library/jest-dom/extend-expect';
 import { BrowserRouter } from 'react-router-dom';
 import CompaniesContext from '../../context/companiesContext';
 import CompanymapContext from '../../context/companyMapContext';
 import { getCompanies } from '../../services/api';
+import '@testing-library/jest-dom/extend-expect';
 
 const renderComponent = () => {
   const companyMap = [];
@@ -32,7 +32,7 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('Header', () => {
-  it('shoud render correctly', () => {
+  it('shoud render correctly Header', () => {
     renderComponent();
 
     expect(screen.getByText('Localizador de Empresas')).toBeInTheDocument();

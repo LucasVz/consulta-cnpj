@@ -29,6 +29,7 @@ export default function Header() {
       setCompanies([...companies, result.data]);
       setCnpj('');
     } catch (error) {
+      console.log(error);
       setCnpj('');
       Swal.fire({
         icon: 'error',

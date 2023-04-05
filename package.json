@@ -2,7 +2,6 @@
   "name": "reactapp",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "test": "jest",
@@ -10,8 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "ajax-request": "^1.2.3",
     "axios": "^1.3.4",
     "axios-jsonp": "^1.0.4",
+    "jsonp": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
