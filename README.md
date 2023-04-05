@@ -6,9 +6,9 @@ Um site para fazer consulta de empresas através do CNPJ.
 
 O site utiliza a API da receitaws: https://receitaws.com.br/
 
-contem as seguintes funções:
+Contem as seguintes funções:
 
-- conseguir informações de empresas através do CNPJ
+- Conseguir informações de empresas através do CNPJ
 - Consultar localização da empresa
 
 OBS: Enfrentei dificuldades para usar a API receitaws devido a problemas com o CORS. A própria biblioteca da API sugeriu que eu usasse a requisição no formato JSONP, o que me levou a testar várias bibliotecas até encontrar uma solução com o 'axios-jsonp'. Infelizmente, não consegui tratar os erros da forma que gostaria, pois não recebia um status de erro específico.
@@ -41,7 +41,7 @@ npm run dev
 
 4. Acesse no seu navegador http://localhost:5173/
 
-ou acesse https://consulta-cnpj-sigma.vercel.app/
+Ou acesse https://consulta-cnpj-sigma.vercel.app/
 
 ## Como rodar os testes
 
